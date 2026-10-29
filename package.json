@@ -1,0 +1,36 @@
+{
+  "name": "call-it",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A Twitch chat calibration game",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "demo": "tsx src/demo.ts",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.3.0",
+    "tmi.js": "^1.8.5",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.2",
+    "@types/tmi.js": "^1.8.6",
+    "@types/ws": "^8.18.2",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^2.1.8"
+  }
+}

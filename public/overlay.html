@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080,initial-scale=1">
+  <title>Call It Overlay</title>
+  <link rel="stylesheet" href="/assets/overlay.css">
+</head>
+<body>
+  <main class="card" aria-live="polite">
+    <header class="heading">
+      <div class="brand">CALL IT <span class="live-dot"></span></div>
+      <div id="status" class="status idle">IDLE</div>
+    </header>
+    <div id="question" class="question">Waiting for the next call</div>
+    <section class="chart" aria-label="Viewer probability calls">
+      <div id="buckets" class="buckets"></div>
+      <div class="axis" aria-label="Call probability percent YES">
+        <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100%</span>
+      </div>
+      <div id="outcome" class="outcome"></div>
+    </section>
+    <footer class="metrics">
+      <div class="mean-block"><div class="metric-label">CROWD MEAN</div><div class="mean"><span id="mean-value">—</span><span class="unit">%</span></div></div>
+      <div class="count-block"><div class="metric-label">CALLS</div><div id="count" class="count">0</div></div>
+    </footer>
+    <section id="leaders" class="leaders" aria-live="polite" aria-label="Sharpest callers"></section>
+  </main>
+  <script src="/assets/overlay.js" defer></script>
+</body>
+</html>

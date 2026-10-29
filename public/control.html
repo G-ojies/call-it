@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Call It Control</title>
+  <link rel="stylesheet" href="/assets/control.css">
+</head>
+<body>
+  <main class="panel">
+    <header><div><div class="eyebrow">CALL IT</div><h1>Stream controls</h1></div><div id="connection" class="connection">LIVE</div></header>
+    <section id="current" class="current">No question open</section>
+    <form id="question-form">
+      <label for="question">New question</label>
+      <textarea id="question" maxlength="240" placeholder="What are we calling?" required></textarea>
+      <button class="primary" type="submit">Open question</button>
+    </form>
+    <div class="actions">
+      <button id="lock" type="button">Lock calls</button>
+      <button id="yes" class="yes" type="button">Resolve YES</button>
+      <button id="no" class="no" type="button">Resolve NO</button>
+      <button id="cancel" class="cancel" type="button">Cancel question</button>
+    </div>
+    <div id="feedback" role="status"></div>
+  </main>
+  <script src="/assets/control.js" defer></script>
+</body>
+</html>

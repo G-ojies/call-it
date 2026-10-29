@@ -1,0 +1,43 @@
+:root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+* { box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; margin: 0; overflow: hidden; background: transparent; color: #f8fafc; }
+.card { position: absolute; left: 56px; bottom: 52px; width: 780px; min-height: 420px; padding: 32px 36px 28px; border: 1px solid rgba(148,163,184,.28); border-radius: 24px; background: rgba(8, 14, 27, .88); box-shadow: 0 22px 70px rgba(0,0,0,.45); backdrop-filter: blur(18px); }
+.heading { display:flex; justify-content:space-between; align-items:center; }
+.brand { display:flex; align-items:center; gap:12px; color:#a5b4fc; font-size:24px; font-weight:850; letter-spacing:.14em; }
+.live-dot { width:12px; height:12px; border-radius:50%; background:#34d399; box-shadow:0 0 16px rgba(52,211,153,.75); }
+.status { padding:8px 15px; border-radius:999px; font-size:24px; line-height:1; font-weight:850; letter-spacing:.04em; background:#334155; color:#e2e8f0; }
+.status.open { color:#07131b; background:#5eead4; }
+.status.locked { color:#1e1300; background:#fbbf24; }
+.status.resolved { color:#07131b; background:#a3e635; }
+.status.no { color:#fff; background:#f43f5e; }
+.question { margin-top:22px; min-height:72px; color:#fff; font-size:34px; line-height:1.15; font-weight:750; letter-spacing:-.025em; }
+.chart { position:relative; height:156px; margin:20px 0 4px; padding:0 7px 34px; border-bottom:2px solid rgba(148,163,184,.38); }
+.buckets { height:100%; display:grid; grid-template-columns:repeat(10,1fr); align-items:end; gap:12px; }
+.bucket { position:relative; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:8px; }
+.bar-wrap { display:flex; width:100%; height:116px; align-items:flex-end; justify-content:center; }
+.bar { width:42px; min-height:3px; border-radius:8px 8px 2px 2px; background:linear-gradient(180deg,#2dd4bf,#6366f1); transition:height 520ms cubic-bezier(.2,.8,.2,1), background-color 250ms; box-shadow:0 0 16px rgba(45,212,191,.18); }
+.bucket-count { min-height:26px; color:#e2e8f0; font-size:24px; font-weight:750; }
+.axis { position:absolute; left:7px; right:7px; bottom:-36px; display:flex; justify-content:space-between; color:#cbd5e1; font-size:24px; font-weight:650; line-height:1; }
+.outcome { position:absolute; z-index:3; bottom:0; left:0; height:8px; width:0; opacity:0; border-radius:8px; background:#a3e635; box-shadow:0 0 18px #a3e635; transition:width 750ms ease-out, opacity 180ms; }
+.outcome.no { background:#fb7185; box-shadow:0 0 18px #fb7185; }
+.card.reveal .outcome { opacity:1; width:100%; }
+.metrics { display:flex; align-items:flex-end; gap:40px; margin-top:34px; }
+.metric-label { color:#94a3b8; font-size:24px; font-weight:750; letter-spacing:.09em; }
+.mean { font-size:62px; line-height:1; font-weight:900; letter-spacing:-.04em; color:#5eead4; }
+.mean .unit { margin-left:3px; font-size:36px; color:#a5b4fc; }
+.count { font-size:40px; line-height:1.2; font-weight:850; }
+.leaders { position:absolute; left:100%; bottom:28px; width:440px; margin-left:20px; display:grid; gap:10px; }
+.leaders-heading { margin-bottom:4px; opacity:0; transform:translateX(36px); }
+.leaders-title { color:#fff; font-size:28px; line-height:1.15; font-weight:850; }
+.leaders-hint { margin-top:4px; color:#cbd5e1; font-size:24px; line-height:1.2; }
+.leader { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:13px 16px; border:1px solid rgba(148,163,184,.28); border-radius:14px; background:rgba(15,23,42,.94); font-size:24px; opacity:0; transform:translateX(36px); }
+.leader .name { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:800; }
+.leader .score { flex:none; color:#5eead4; font-weight:850; }
+.card.reveal .leaders-heading { animation:slide-in 350ms cubic-bezier(.2,.8,.2,1) 850ms forwards; }
+.card.reveal .leader { animation:slide-in 350ms cubic-bezier(.2,.8,.2,1) forwards; }
+.card.reveal .leader:nth-of-type(1) { animation-delay:1.05s; }
+.card.reveal .leader:nth-of-type(2) { animation-delay:1.18s; }
+.card.reveal .leader:nth-of-type(3) { animation-delay:1.31s; }
+.card.reveal .leader:nth-of-type(4) { animation-delay:1.44s; }
+.card.reveal .leader:nth-of-type(5) { animation-delay:1.57s; }
+@keyframes slide-in { to { opacity:1; transform:translateX(0); } }
